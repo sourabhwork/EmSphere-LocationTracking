@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A818EB2526AC35C0004875B8 /* HomeTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818EB2426AC35C0004875B8 /* HomeTabCollectionViewCell.swift */; };
 		C02B8ED22B05955518AF8423 /* Pods_Emshere_LocationTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C928713B0E3C5B466CAF7574 /* Pods_Emshere_LocationTrack.framework */; };
 		CC42914C26A47D7700EEB435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC42914B26A47D7700EEB435 /* AppDelegate.swift */; };
 		CC42914E26A47D7700EEB435 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC42914D26A47D7700EEB435 /* SceneDelegate.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A818EB2426AC35C0004875B8 /* HomeTabCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		C928713B0E3C5B466CAF7574 /* Pods_Emshere_LocationTrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emshere_LocationTrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC42914826A47D7700EEB435 /* Emshere-LocationTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emshere-LocationTrack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC42914B26A47D7700EEB435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 		CC42918326A47E7800EEB435 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
+				A818EB2426AC35C0004875B8 /* HomeTabCollectionViewCell.swift */,
 				CC42918426A47E7800EEB435 /* MarkAttedanceMapViewController.swift */,
 				CC42918526A47E7800EEB435 /* MarkAttandanceViewController.swift */,
 			);
@@ -540,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC4291C126A47E7900EEB435 /* LoginViewController.swift in Sources */,
+				A818EB2526AC35C0004875B8 /* HomeTabCollectionViewCell.swift in Sources */,
 				CC4291A526A47E7900EEB435 /* BCFloatingTextfield.swift in Sources */,
 				CC4291D026A47E7900EEB435 /* Font.swift in Sources */,
 				CC4291CF26A47E7900EEB435 /* String.swift in Sources */,

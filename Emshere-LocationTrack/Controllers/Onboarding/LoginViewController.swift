@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
         // print("otp=",otp)
         if (UserProfile.getIsAllowLoginUsingOTP() == "1"){
             if(UserProfile.getIsLogoutByOTP() == "1"){
-              
+                
             }
             passwordTextField.setupTheme("Enter OTP")
             self.registerNewUserButn.setTitle("Don't Have OTP", for: .normal)
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
             self.remeberMeButton.isHidden = true
             self.forgotPasswordButn.isHidden = true
         }else {
-           
+            
             passwordTextField.isSecureTextEntry = true
             self.registerNewUserButn.setTitle("Register New User", for: .normal)
             self.remeberMeBtn.isHidden = false
@@ -68,7 +68,7 @@ class LoginViewController: UIViewController {
                 self.showLocationServiceAlert()
             }
         }
-      //  self.syncOfflineAttedanceData() //MARK:commnted on 30-05-2021 given sync button in those controller
+        //  self.syncOfflineAttedanceData() //MARK:commnted on 30-05-2021 given sync button in those controller
         
         
         //MARK:code on 08-05-2021 if locaion permistion enable then start location service
@@ -90,7 +90,7 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         loginButton.roundCorners(corners: .allCorners, cornerRadii: CGSize(width: (loginButton.frame.size.height/2), height: (loginButton.frame.size.height/2)))
-      
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,23 +158,27 @@ class LoginViewController: UIViewController {
     
     func setupHomeScreen() {
         /*
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        let mainViewController = UIStoryboard.Main().instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        
-        let leftViewController = UIStoryboard.Main().instantiateViewController(withIdentifier: "LeftViewController") as! LeftViewController
-        
-        let nvc: UINavigationController = NavigationBarUtils.setupNavigationController(viewController: mainViewController)
-        
-        let slideMenuController = ExSlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
-        
-        slideMenuController.automaticallyAdjustsScrollViewInsets = true
-        appDelegate.window?.rootViewController = slideMenuController
-        
-        appDelegate.window?.makeKeyAndVisible()
-        */
-        
+         
+         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+         
+         let mainViewController = UIStoryboard.Main().instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+         
+         let leftViewController = UIStoryboard.Main().instantiateViewController(withIdentifier: "LeftViewController") as! LeftViewController
+         
+         let nvc: UINavigationController = NavigationBarUtils.setupNavigationController(viewController: mainViewController)
+         
+         let slideMenuController = ExSlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
+         
+         slideMenuController.automaticallyAdjustsScrollViewInsets = true
+         appDelegate.window?.rootViewController = slideMenuController
+         
+         appDelegate.window?.makeKeyAndVisible()
+         */
+        if let markAttendanceVC = UIStoryboard.Main().instantiateViewController(withIdentifier: "MarkAttandanceViewController") as? MarkAttandanceViewController {
+            //let navigation = UINavigationController(rootViewController: markAttendanceVC)
+            self.navigationController?.pushViewController(markAttendanceVC, animated: true)
+            //self.present(markAttendanceVC, animated: true, completion: nil)
+        }
     }
     
     func validate() -> Bool {
@@ -887,7 +891,6 @@ class LoginViewController: UIViewController {
         self.showForgotPasswordPopUp()
     }
     
-    
     @IBAction func remeberMeAction(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -913,6 +916,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController:ForgotPasswordAlertDelegate{
+    
     func didShowMessgae(msg: String) {
         self.presentAlert(withTitle: "", message: msg)
     }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7LN-aT-bTp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BwD-HC-YVK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,7 @@
         <!--Login View Controller-->
         <scene sceneID="xuO-Uy-5hb">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="7LN-aT-bTp" customClass="LoginViewController" customModule="emSphere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="7LN-aT-bTp" customClass="LoginViewController" customModule="Emshere_LocationTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o5E-Uq-Ms4"/>
                         <viewControllerLayoutGuide type="bottom" id="8bY-Yu-B8C"/>
@@ -33,7 +34,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empower_logo" translatesAutoresizingMaskIntoConstraints="NO" id="db5-D3-RPU">
                                 <rect key="frame" x="45.5" y="131" width="323" height="116"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFF-Lv-vB9" customClass="ACFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFF-Lv-vB9" customClass="ACFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="336" width="331" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="XIM-ZY-Zi8"/>
@@ -44,7 +45,7 @@
                                     <outlet property="delegate" destination="7LN-aT-bTp" id="KPZ-hP-exs"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VuL-il-e33" customClass="ACFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VuL-il-e33" customClass="ACFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="411" width="331" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="aSi-TL-jmQ"/>
@@ -67,7 +68,7 @@
                                     <action selector="remeberMeAction:" destination="7LN-aT-bTp" eventType="touchUpInside" id="ci7-dT-azu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a84-fW-bmz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a84-fW-bmz">
                                 <rect key="frame" x="41.5" y="540" width="331" height="45"/>
                                 <color key="backgroundColor" red="0.96334570649999995" green="0.68079811329999995" blue="0.25817444919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -81,7 +82,7 @@
                                     <action selector="loginAction:" destination="7LN-aT-bTp" eventType="touchUpInside" id="Q5K-5y-x3F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOt-cL-fRD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOt-cL-fRD">
                                 <rect key="frame" x="41.5" y="595" width="331" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FUb-cs-voG"/>
@@ -108,7 +109,7 @@
                                     <action selector="remeberMeAction:" destination="7LN-aT-bTp" eventType="touchUpInside" id="7hg-zz-HyD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCY-E3-6I7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCY-E3-6I7">
                                 <rect key="frame" x="41.5" y="630" width="331" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="71f-vh-fKG"/>
@@ -122,6 +123,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="uyr-QB-7Wt"/>
                         <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BOt-cL-fRD" firstAttribute="centerX" secondItem="ZDO-9j-eZu" secondAttribute="centerX" id="2Xp-Qr-T2E"/>
@@ -153,8 +155,8 @@
                             <constraint firstItem="dpv-zI-qQc" firstAttribute="leading" secondItem="VuL-il-e33" secondAttribute="leading" id="wzc-g9-oUj"/>
                             <constraint firstItem="ZDO-9j-eZu" firstAttribute="height" secondItem="Gwx-Kh-rci" secondAttribute="height" id="yVI-BT-Gbc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="uyr-QB-7Wt"/>
                     </view>
+                    <navigationItem key="navigationItem" id="y4a-CC-28y"/>
                     <connections>
                         <outlet property="emailTextField" destination="wFF-Lv-vB9" id="6VJ-hP-I9K"/>
                         <outlet property="forgotPasswordButn" destination="FCY-E3-6I7" id="IiL-Gu-Kvh"/>
@@ -167,12 +169,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4be-OT-8bw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-368" y="-105"/>
+            <point key="canvasLocation" x="542.02898550724638" y="-105.13392857142857"/>
         </scene>
         <!--License Key View Controller-->
         <scene sceneID="6DY-0l-TCZ">
             <objects>
-                <viewController storyboardIdentifier="LicenseKeyViewController" modalPresentationStyle="fullScreen" id="KnK-Wj-pCq" customClass="LicenseKeyViewController" customModule="emSphere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LicenseKeyViewController" modalPresentationStyle="fullScreen" id="KnK-Wj-pCq" customClass="LicenseKeyViewController" customModule="Emshere_LocationTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eiY-1H-OwR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,19 +186,19 @@
                                 <rect key="frame" x="61.5" y="125.5" width="291" height="116"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access code has been sent to your E-mail id &quot;kalpesh@gmail.com&quot;, Please enter the same here to register" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUn-s9-khJ">
-                                <rect key="frame" x="41.5" y="244.5" width="331" height="52.5"/>
+                                <rect key="frame" x="41.5" y="244.5" width="331" height="53"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <color key="textColor" red="0.96334570649999995" green="0.68079811329999995" blue="0.25817444919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Access Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKO-5m-R9v">
-                                <rect key="frame" x="41.5" y="307" width="331" height="18"/>
+                                <rect key="frame" x="41.5" y="307.5" width="331" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QmH-7m-mbx" customClass="BCFloatingTextfield" customModule="emSphere" customModuleProvider="target">
-                                <rect key="frame" x="61.5" y="351" width="291" height="45"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QmH-7m-mbx" customClass="BCFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
+                                <rect key="frame" x="61.5" y="351.5" width="291" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="B0C-ba-tqn"/>
                                 </constraints>
@@ -206,8 +208,8 @@
                                     <outlet property="delegate" destination="KnK-Wj-pCq" id="SJI-lm-ylp"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB7-ec-9QW">
-                                <rect key="frame" x="41.5" y="421" width="331" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB7-ec-9QW">
+                                <rect key="frame" x="41.5" y="421.5" width="331" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="E1d-sK-haz"/>
                                 </constraints>
@@ -220,13 +222,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check spam folder or contact your administator" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed5-ub-PYd">
-                                <rect key="frame" x="41.5" y="449" width="331" height="17.5"/>
+                                <rect key="frame" x="41.5" y="449.5" width="331" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <color key="textColor" red="0.96334570649999995" green="0.68079811329999995" blue="0.25817444919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWc-QH-6R4">
-                                <rect key="frame" x="61.5" y="496.5" width="291" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWc-QH-6R4">
+                                <rect key="frame" x="61.5" y="497.5" width="291" height="40"/>
                                 <color key="backgroundColor" red="0.96334570649999995" green="0.68079811329999995" blue="0.25817444919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="b12-0O-zB9"/>
@@ -240,6 +242,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="U9m-g8-1xg"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FUE-xd-60c" firstAttribute="height" secondItem="eiY-1H-OwR" secondAttribute="height" id="2pY-Qe-W8A"/>
@@ -269,7 +272,6 @@
                             <constraint firstItem="ed5-ub-PYd" firstAttribute="width" secondItem="lUn-s9-khJ" secondAttribute="width" id="tq4-rW-ig5"/>
                             <constraint firstItem="FUE-xd-60c" firstAttribute="leading" secondItem="U9m-g8-1xg" secondAttribute="leading" id="vHr-8J-nzg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="U9m-g8-1xg"/>
                     </view>
                     <connections>
                         <outlet property="didntReceviedLabel" destination="aB7-ec-9QW" id="Q3F-Os-8pi"/>
@@ -284,12 +286,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1h-3A-sB4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468" y="-32"/>
+            <point key="canvasLocation" x="1376.8115942028987" y="-32.142857142857139"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="CmY-3Z-uzn">
             <objects>
-                <viewController storyboardIdentifier="RegistrationViewController" modalPresentationStyle="fullScreen" id="EiE-Ji-dc7" customClass="RegistrationViewController" customModule="emSphere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationViewController" modalPresentationStyle="fullScreen" id="EiE-Ji-dc7" customClass="RegistrationViewController" customModule="Emshere_LocationTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YTR-W4-6Jy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,7 +302,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empower_logo" translatesAutoresizingMaskIntoConstraints="NO" id="xKd-cH-Moh">
                                 <rect key="frame" x="45" y="124.5" width="324" height="116"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTm-JW-BNb" customClass="BCFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTm-JW-BNb" customClass="BCFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="45" y="270.5" width="324" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ZTp-Vd-Bv1"/>
@@ -311,7 +313,7 @@
                                     <outlet property="delegate" destination="EiE-Ji-dc7" id="dCf-Up-MW4"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-cL-Lie" customClass="BCFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-cL-Lie" customClass="BCFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="45" y="325.5" width="324" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -319,7 +321,7 @@
                                     <outlet property="delegate" destination="EiE-Ji-dc7" id="hKn-xD-ypo"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Wf-KC-EAh" customClass="BCFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Wf-KC-EAh" customClass="BCFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="45" y="380.5" width="324" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -327,7 +329,7 @@
                                     <outlet property="delegate" destination="EiE-Ji-dc7" id="WES-zn-cce"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asE-vy-gka" customClass="BCFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asE-vy-gka" customClass="BCFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="45" y="435.5" width="324" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -335,7 +337,7 @@
                                     <outlet property="delegate" destination="EiE-Ji-dc7" id="DFX-RK-eHa"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqI-tv-eyW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqI-tv-eyW">
                                 <rect key="frame" x="45" y="560.5" width="324" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kza-Qk-XOv"/>
@@ -348,7 +350,7 @@
                                     <action selector="showLoginView:" destination="EiE-Ji-dc7" eventType="touchUpInside" id="wMO-Rx-ZlY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBd-bv-l6m">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBd-bv-l6m">
                                 <rect key="frame" x="45" y="510.5" width="324" height="40"/>
                                 <color key="backgroundColor" red="0.96334570649999995" green="0.68079811329999995" blue="0.25817444919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -363,6 +365,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="obx-nc-dZe"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xKd-cH-Moh" firstAttribute="height" secondItem="YTR-W4-6Jy" secondAttribute="width" multiplier="0.28" id="CgM-xq-Gmm"/>
@@ -395,7 +398,6 @@
                             <constraint firstItem="xKd-cH-Moh" firstAttribute="centerY" secondItem="1jD-zV-GYH" secondAttribute="centerY" multiplier="0.4" constant="3.1000000000000001" id="t59-Yg-YRd"/>
                             <constraint firstItem="asE-vy-gka" firstAttribute="trailing" secondItem="6Wf-KC-EAh" secondAttribute="trailing" id="ztK-L6-efc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="obx-nc-dZe"/>
                     </view>
                     <connections>
                         <outlet property="accountButton" destination="aqI-tv-eyW" id="F8G-e5-krb"/>
@@ -408,12 +410,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVz-Hz-CFB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="-32"/>
+            <point key="canvasLocation" x="2123.1884057971015" y="-32.142857142857139"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="Tdx-tc-cWt">
             <objects>
-                <viewController storyboardIdentifier="ChangePasswordViewController" modalPresentationStyle="fullScreen" id="e11-mT-mf1" customClass="ChangePasswordViewController" customModule="emSphere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" modalPresentationStyle="fullScreen" id="e11-mT-mf1" customClass="ChangePasswordViewController" customModule="Emshere_LocationTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dD8-jS-4ql"/>
                         <viewControllerLayoutGuide type="bottom" id="d8A-8y-5Ub"/>
@@ -428,7 +430,7 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empower_logo" translatesAutoresizingMaskIntoConstraints="NO" id="OuH-Os-xQl">
                                 <rect key="frame" x="45.5" y="99" width="323" height="116"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vk-6v-gMU" customClass="ACFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vk-6v-gMU" customClass="ACFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="156.5" width="331" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="bBU-da-2Zx"/>
@@ -439,7 +441,7 @@
                                     <outlet property="delegate" destination="e11-mT-mf1" id="SYk-s8-yBM"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-z8-AH4" customClass="ACFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-z8-AH4" customClass="ACFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="231.5" width="331" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="hU5-9k-kt0"/>
@@ -450,7 +452,7 @@
                                     <outlet property="delegate" destination="e11-mT-mf1" id="zBz-QX-LtV"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VqI-SZ-pny" customClass="ACFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VqI-SZ-pny" customClass="ACFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="306.5" width="331" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="AI2-tp-xhz"/>
@@ -464,7 +466,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8u6-iE-lJV">
                                 <rect key="frame" x="41.5" y="381.5" width="331" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f98-g7-oRW">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f98-g7-oRW">
                                         <rect key="frame" x="0.0" y="0.0" width="150.5" height="45"/>
                                         <color key="backgroundColor" red="0.96334570649999995" green="0.68079811329999995" blue="0.25817444919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -478,7 +480,7 @@
                                             <action selector="didTappedSubmitButn:" destination="e11-mT-mf1" eventType="touchUpInside" id="yTm-mg-8qK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-05-IbH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-05-IbH">
                                         <rect key="frame" x="180.5" y="0.0" width="150.5" height="45"/>
                                         <color key="backgroundColor" red="0.96334570649999995" green="0.68079811329999995" blue="0.25817444919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -495,6 +497,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="eCa-iK-ajO"/>
                         <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BeI-eC-SOh" firstAttribute="centerX" secondItem="RbH-KG-jcK" secondAttribute="centerX" id="2Sg-xK-hes"/>
@@ -518,7 +521,6 @@
                             <constraint firstItem="vJX-z8-AH4" firstAttribute="centerX" secondItem="BeI-eC-SOh" secondAttribute="centerX" id="xyG-cs-jSW"/>
                             <constraint firstItem="vJX-z8-AH4" firstAttribute="top" secondItem="3vk-6v-gMU" secondAttribute="bottom" constant="30" id="zJb-pZ-jtj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eCa-iK-ajO"/>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="Xq6-05-IbH" id="rmp-oC-DOv"/>
@@ -535,7 +537,7 @@
         <!--View Controller-->
         <scene sceneID="obm-2G-8xu">
             <objects>
-                <viewController storyboardIdentifier="OTPViewController" modalPresentationStyle="fullScreen" id="fhm-km-5os" customClass="OTPViewController" customModule="emSphere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OTPViewController" modalPresentationStyle="fullScreen" id="fhm-km-5os" customClass="OTPViewController" customModule="Emshere_LocationTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XKi-s1-UBO"/>
                         <viewControllerLayoutGuide type="bottom" id="jzy-0R-wTP"/>
@@ -550,7 +552,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empower_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Kg6-ay-6rD">
                                 <rect key="frame" x="45.5" y="131" width="323" height="116"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnU-PD-PNA" customClass="ACFloatingTextfield" customModule="emSphere" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnU-PD-PNA" customClass="ACFloatingTextfield" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="336" width="331" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="KLZ-Ux-fnD"/>
@@ -573,7 +575,7 @@
                                     <action selector="remeberMeAction:" destination="fhm-km-5os" eventType="touchUpInside" id="cnu-YT-C4Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewm-un-NZC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewm-un-NZC">
                                 <rect key="frame" x="41.5" y="465" width="331" height="45"/>
                                 <color key="backgroundColor" red="0.96334570649999995" green="0.68079811329999995" blue="0.25817444919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -587,7 +589,7 @@
                                     <action selector="sendOtpAction:" destination="fhm-km-5os" eventType="touchUpInside" id="PI4-Tf-ROe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfA-ax-yMi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfA-ax-yMi">
                                 <rect key="frame" x="41.5" y="528" width="331" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="b8Y-Qa-wT6"/>
@@ -615,6 +617,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="lGZ-Cy-R3l"/>
                         <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hnU-PD-PNA" firstAttribute="width" secondItem="79e-oA-bnR" secondAttribute="width" multiplier="0.8" id="4X1-P5-osp"/>
@@ -640,7 +643,6 @@
                             <constraint firstItem="ehD-HS-8zU" firstAttribute="leading" secondItem="hnU-PD-PNA" secondAttribute="leading" constant="30" id="pga-Q1-BAA"/>
                             <constraint firstItem="Kg6-ay-6rD" firstAttribute="height" secondItem="79e-oA-bnR" secondAttribute="width" multiplier="0.28" id="yp0-LV-IPv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="lGZ-Cy-R3l"/>
                     </view>
                     <connections>
                         <outlet property="registerNewUser" destination="hfA-ax-yMi" id="yyz-Rj-pZO"/>
@@ -652,12 +654,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cK5-2S-fif" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2041" y="-32"/>
+            <point key="canvasLocation" x="2950.7246376811595" y="-32.142857142857139"/>
         </scene>
         <!--Mark Attandance View Controller-->
         <scene sceneID="hVb-tN-HwJ">
             <objects>
-                <viewController storyboardIdentifier="MarkAttandanceViewController" modalPresentationStyle="fullScreen" id="I3z-5i-nZK" customClass="MarkAttandanceViewController" customModule="emSphere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MarkAttandanceViewController" modalPresentationStyle="fullScreen" id="I3z-5i-nZK" customClass="MarkAttandanceViewController" customModule="Emshere_LocationTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lvt-W6-5en"/>
                         <viewControllerLayoutGuide type="bottom" id="BXi-Oj-UYG"/>
@@ -667,14 +669,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MG6-IC-zyQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attendance_through" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IxR-eX-2iC">
-                                <rect key="frame" x="70.5" y="10" width="273" height="165.5"/>
+                                <rect key="frame" x="70.5" y="45" width="273" height="166"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOS-v2-5H9">
-                                <rect key="frame" x="207" y="193.5" width="0.0" height="20"/>
+                                <rect key="frame" x="207" y="229" width="0.0" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="lvc-6f-ToA"/>
                                 </constraints>
@@ -682,8 +684,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FK3-QZ-999">
-                                <rect key="frame" x="91.5" y="231.5" width="65" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FK3-QZ-999">
+                                <rect key="frame" x="91.5" y="267" width="65" height="65"/>
                                 <color key="backgroundColor" red="0.1710252166" green="0.39579880239999998" blue="0.08096534759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FK3-QZ-999" secondAttribute="height" multiplier="1:1" id="EbM-q1-H8v"/>
@@ -697,8 +699,8 @@
                                     <action selector="inPunchAction:" destination="I3z-5i-nZK" eventType="touchUpInside" id="kDV-L2-RNL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZ6-aI-Cmj">
-                                <rect key="frame" x="257.5" y="231.5" width="65" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZ6-aI-Cmj">
+                                <rect key="frame" x="257.5" y="267" width="65" height="65"/>
                                 <color key="backgroundColor" red="0.80456650259999996" green="0.1848366857" blue="0.16668355460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="21"/>
                                 <state key="normal" title="OUT">
@@ -709,13 +711,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Punch " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixj-NY-7PI">
-                                <rect key="frame" x="20.5" y="319.5" width="373" height="19"/>
+                                <rect key="frame" x="20.5" y="355" width="373" height="19"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRv-oQ-G7y">
-                                <rect key="frame" x="15" y="358.5" width="384" height="30"/>
+                                <rect key="frame" x="15" y="394" width="384" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdI-iq-enb">
                                         <rect key="frame" x="346" y="0.0" width="30" height="30"/>
@@ -761,12 +763,12 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l3B-De-6tO">
-                                <rect key="frame" x="15" y="388.5" width="384" height="453.5"/>
+                                <rect key="frame" x="15" y="424" width="384" height="418"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.1058823529" green="0.1215686275" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarkAttandanceTableTitleCell" id="cBd-Xm-uFu" customClass="MarkAttandanceTableCell" customModule="emSphere" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarkAttandanceTableTitleCell" id="cBd-Xm-uFu" customClass="MarkAttandanceTableCell" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="384" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cBd-Xm-uFu" id="GFV-ac-dno">
@@ -819,7 +821,7 @@
                                             <outlet property="statusLabel" destination="3Aj-D4-2GT" id="lFV-Qe-0DA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarkAttandanceTableCell" id="NNd-g9-i09" customClass="MarkAttandanceTableCell" customModule="emSphere" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarkAttandanceTableCell" id="NNd-g9-i09" customClass="MarkAttandanceTableCell" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="384" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NNd-g9-i09" id="sfo-xp-Lpk">
@@ -903,7 +905,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="KuV-WQ-vbL" customClass="HomeTabCollectionViewCell" customModule="emSphere" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="KuV-WQ-vbL" customClass="HomeTabCollectionViewCell" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -937,10 +939,11 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="GSd-jP-wRl"/>
                         <color key="backgroundColor" red="0.2274509804" green="0.23529411759999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BXi-Oj-UYG" firstAttribute="top" secondItem="MG6-IC-zyQ" secondAttribute="bottom" id="0fN-Pw-Fz3"/>
-                            <constraint firstItem="IxR-eX-2iC" firstAttribute="top" secondItem="jDi-xb-XuY" secondAttribute="top" multiplier="0.3" constant="10" id="1zr-7f-Fag"/>
+                            <constraint firstItem="IxR-eX-2iC" firstAttribute="top" secondItem="GSd-jP-wRl" secondAttribute="top" multiplier="0.3" constant="32" id="1zr-7f-Fag"/>
                             <constraint firstItem="MG6-IC-zyQ" firstAttribute="trailing" secondItem="jDi-xb-XuY" secondAttribute="trailing" id="2vr-Lf-lpH"/>
                             <constraint firstItem="vRv-oQ-G7y" firstAttribute="centerX" secondItem="jDi-xb-XuY" secondAttribute="centerX" id="5Uy-5h-pPV"/>
                             <constraint firstItem="vRv-oQ-G7y" firstAttribute="top" secondItem="Ixj-NY-7PI" secondAttribute="bottom" constant="20" id="9Zh-N1-BlE"/>
@@ -963,13 +966,12 @@
                             <constraint firstItem="IxR-eX-2iC" firstAttribute="width" secondItem="jDi-xb-XuY" secondAttribute="width" multiplier="0.66" id="hFy-VY-0xU"/>
                             <constraint firstItem="l3B-De-6tO" firstAttribute="width" secondItem="vRv-oQ-G7y" secondAttribute="width" id="lnh-BR-grj"/>
                             <constraint firstItem="dZ6-aI-Cmj" firstAttribute="width" secondItem="FK3-QZ-999" secondAttribute="width" id="mDE-ma-dNw"/>
-                            <constraint firstItem="MG6-IC-zyQ" firstAttribute="top" secondItem="jDi-xb-XuY" secondAttribute="top" id="pqf-uF-xFf"/>
+                            <constraint firstItem="MG6-IC-zyQ" firstAttribute="top" secondItem="GSd-jP-wRl" secondAttribute="top" id="pqf-uF-xFf"/>
                             <constraint firstItem="Ixj-NY-7PI" firstAttribute="width" secondItem="jDi-xb-XuY" secondAttribute="width" multiplier="0.9" id="tiB-aV-tI6"/>
                             <constraint firstItem="Ixj-NY-7PI" firstAttribute="centerX" secondItem="jDi-xb-XuY" secondAttribute="centerX" id="uyb-Bx-sbN"/>
                             <constraint firstItem="dZ6-aI-Cmj" firstAttribute="centerX" secondItem="jDi-xb-XuY" secondAttribute="centerX" multiplier="1.4" id="yat-vz-Rg5"/>
                             <constraint firstItem="MG6-IC-zyQ" firstAttribute="leading" secondItem="jDi-xb-XuY" secondAttribute="leading" id="zht-Mc-Iom"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="GSd-jP-wRl"/>
                     </view>
                     <connections>
                         <outlet property="backgroundMapView" destination="MG6-IC-zyQ" id="tuP-ey-pIr"/>
@@ -991,7 +993,7 @@
         <!--Mark Attedance Map View Controller-->
         <scene sceneID="BLi-a4-if9">
             <objects>
-                <viewController storyboardIdentifier="MarkAttedanceMapViewController" modalPresentationStyle="fullScreen" id="8pk-Ao-gGj" customClass="MarkAttedanceMapViewController" customModule="emSphere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MarkAttedanceMapViewController" modalPresentationStyle="fullScreen" id="8pk-Ao-gGj" customClass="MarkAttedanceMapViewController" customModule="Emshere_LocationTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e9Z-oG-47v"/>
                         <viewControllerLayoutGuide type="bottom" id="DFd-ah-7kn"/>
@@ -1014,7 +1016,7 @@
                                 <color key="textColor" red="0.1058823529" green="0.1215686275" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i76-uE-MBq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i76-uE-MBq">
                                 <rect key="frame" x="91.5" y="319" width="65" height="65"/>
                                 <color key="backgroundColor" red="0.1710252166" green="0.39579880239999998" blue="0.08096534759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1029,7 +1031,7 @@
                                     <action selector="inPunchAction:" destination="8pk-Ao-gGj" eventType="touchUpInside" id="z7C-Rr-c9R"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5c-yI-OLW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5c-yI-OLW">
                                 <rect key="frame" x="257.5" y="319" width="65" height="65"/>
                                 <color key="backgroundColor" red="0.80456650259999996" green="0.1848366857" blue="0.16668355460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="21"/>
@@ -1098,7 +1100,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.1058823529" green="0.1215686275" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarkAttandanceTableTitleCell" id="RQZ-gc-ZTr" customClass="MarkAttandanceTableCell" customModule="emSphere" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarkAttandanceTableTitleCell" id="RQZ-gc-ZTr" customClass="MarkAttandanceTableCell" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="384" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RQZ-gc-ZTr" id="Jdf-oI-BN3">
@@ -1151,7 +1153,7 @@
                                             <outlet property="statusLabel" destination="nNN-Z1-ody" id="AOC-lO-oeh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarkAttandanceTableCell" id="CI1-m8-mBL" customClass="MarkAttandanceTableCell" customModule="emSphere" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MarkAttandanceTableCell" id="CI1-m8-mBL" customClass="MarkAttandanceTableCell" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="384" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CI1-m8-mBL" id="afk-nj-JKl">
@@ -1235,7 +1237,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="04g-uy-8Re" customClass="HomeTabCollectionViewCell" customModule="emSphere" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="04g-uy-8Re" customClass="HomeTabCollectionViewCell" customModule="Emshere_LocationTrack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1269,6 +1271,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="seI-dd-g3p"/>
                         <color key="backgroundColor" red="0.2274509804" green="0.23529411759999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="udE-HI-5Sh" firstAttribute="trailing" secondItem="FvB-F2-qMc" secondAttribute="trailing" id="383-lO-rhD"/>
@@ -1298,7 +1301,6 @@
                             <constraint firstItem="0O2-AA-Y6e" firstAttribute="width" secondItem="QuH-Wh-WQg" secondAttribute="width" id="tiz-6V-sUo"/>
                             <constraint firstItem="H5c-yI-OLW" firstAttribute="centerX" secondItem="FvB-F2-qMc" secondAttribute="centerX" multiplier="1.4" id="v6i-uE-F7n"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="seI-dd-g3p"/>
                     </view>
                     <connections>
                         <outlet property="backgroundMapView" destination="udE-HI-5Sh" id="dFH-VE-paU"/>
@@ -1316,7 +1318,60 @@
             </objects>
             <point key="canvasLocation" x="4324" y="903"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8El-Nl-Jdp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BwD-HC-YVK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAR-ZC-cHH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7LN-aT-bTp" kind="relationship" relationship="rootViewController" id="tLd-Zj-lbL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ug9-M0-hd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-368.11594202898556" y="-105.13392857142857"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="3vk-6v-gMU">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="6B9-cL-Lie">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="6Wf-KC-EAh">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="OTm-JW-BNb">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="QmH-7m-mbx">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="VqI-SZ-pny">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="VuL-il-e33">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="asE-vy-gka">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="hnU-PD-PNA">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="vJX-z8-AH4">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="wFF-Lv-vB9">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="attendance_through" width="1000" height="600"/>
         <image name="checkbox-filled" width="25" height="25"/>

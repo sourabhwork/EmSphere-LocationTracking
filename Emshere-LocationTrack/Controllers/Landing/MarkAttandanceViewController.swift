@@ -56,7 +56,7 @@ class MarkAttandanceViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // commented for second build
-        
+        self.navigationController?.navigationBar.isHidden = true
         if !(locationManager.enableLocationService()){
             self.showLocationServiceAlert()
         }
@@ -93,9 +93,9 @@ class MarkAttandanceViewController: UIViewController {
         }
         
         self.deletePunchHistory()
-        self.removePreviousControler()
-        self.setupCamera()
-        self.setCameraLayout()
+        //self.removePreviousControler()
+        //self.setupCamera()
+        //self.setCameraLayout()
         
         UserProfile.saveIsVisitToLocationVC(status: true)
         // self.syncOfflineData()
@@ -105,6 +105,7 @@ class MarkAttandanceViewController: UIViewController {
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
     }
+    
     override func viewDidLayoutSubviews() {
         
         super.viewDidLayoutSubviews()
@@ -113,23 +114,23 @@ class MarkAttandanceViewController: UIViewController {
         self.profileImageView.layoutIfNeeded()
         self.view.layoutIfNeeded()
         
-        if let flowLayout = self.homeTabCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            let theWidth = self.homeTabCollectionView.frame.size.width / CGFloat(self.homeTabArray.count)
-            let theHeight = self.homeTabCollectionView.frame.size.height
-            if (UIDevice.current.userInterfaceIdiom == .pad){
-                self.punchInButnHeightConstraint.constant = 100
-                print("Collection View Width for ipad =",theWidth)
-                flowLayout.itemSize = CGSize(width:theWidth , height: theHeight)
-            } else if (self.homeTabArray.count < 4) {
-                print("Collection View Width for iphone=",theWidth)
-                flowLayout.itemSize = CGSize(width:theWidth , height: theHeight)
-            }
-        }// end of if flowlayout
+//        if let flowLayout = self.homeTabCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            let theWidth = self.homeTabCollectionView.frame.size.width / CGFloat(self.homeTabArray.count)
+//            let theHeight = self.homeTabCollectionView.frame.size.height
+//            if (UIDevice.current.userInterfaceIdiom == .pad){
+//                self.punchInButnHeightConstraint.constant = 100
+//                print("Collection View Width for ipad =",theWidth)
+//                flowLayout.itemSize = CGSize(width:theWidth , height: theHeight)
+//            } else if (self.homeTabArray.count < 4) {
+//                print("Collection View Width for iphone=",theWidth)
+//                flowLayout.itemSize = CGSize(width:theWidth , height: theHeight)
+//            }
+//        }// end of if flowlayout
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
         if CLLocationManager.locationServicesEnabled() {
             // Location services are available, so query the user’s location.
             print("Location service is on")
@@ -1095,5 +1096,23 @@ class MarkAttandanceTableCell: UITableViewCell {
     override func awakeFromNib() {
         // common design setup
         super.awakeFromNib()
+    }
+}
+
+// MARK:- UICollectionView Delegate and Datasource
+
+extension MarkAttandanceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeTabCollectionViewCell
+        return cell
     }
 }
