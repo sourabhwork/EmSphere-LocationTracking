@@ -178,6 +178,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
     }
     
+    //MARK:code on 25-07-2021 for backgrounf location update need to do some code
+    func didMakeLocationUpdateApiCall() {
+        //  UserProfile.clearIsloginByOTP()
+        let registrationDetails = UserProfile.getUserProfile()
+        
+        let employeeId = registrationDetails!["EmployeeID"] ?? ""
+        
+        
+        let deviceId = Const.uniqueDeviceUUID
+        
+        //MARK:take lat and long and get adress from it from reversimg geoaging by lat and long and set to data model
+        
+        let dataModel = DataModel(employeeId: employeeId, deviceid: deviceId, latitude: nil, longitude: nil, locationAddress: nil, locationProvider: "GPS")
+        
+        let parameters = dataModel.toJSON()
+        
+        APIManager.didCallLocationUpdateApi(param: parameters, servicrUrl: Const.appUrl.locationUrl) { (status, response, error) in
+            if status == true {
+                
+                if (response!.value(forKey: "status") == nil){
+                    return
+                }else{
+                    //Below get suuccess data
+                    let statusValue = response!.value(forKey: "status") as? String ?? "0"
+                    if statusValue == "1"{
+                        //MARK:Success
+                        
+                        
+                    }else{
+                        //MARK:Error
+                    }
+                }
+                
+            }else if error != nil {
+                //api failure
+            }
+        }
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

@@ -2009,6 +2009,33 @@ class APIManager {
         }
     }
     
+    //MARK:LocationUpdate in tracking  code on 25-07-2021
+    class func didCallLocationUpdateApi(param: Dictionary<String, Any>,servicrUrl:String, completion: @escaping (Bool, NSDictionary?, APIError?) -> Void) {
+        
+        //internet check
+        if !Connectivity.isConnectedToInternet() {
+            completion(false,nil,internetError)
+            return
+        }
+        var url  = servicrUrl
+        //  var url = UserProfile.getServiceURL()! + Const.appUrl.employeeApi + "ForgotPassword"
+        url = url.trimmingCharacters(in: .whitespacesAndNewlines)
+        print("location update para = \(param)and url = \(url)")
+        Alamofire.request(url, method: .post, parameters:param  ,encoding: URLEncoding.default, headers: nil).responseJSON{ response in
+            print("response location update = \(response)")
+            switch response.result {
+            case .success(let value):
+                completion(true,value as? NSDictionary, nil)
+            //break
+            case .failure(let encodedError):
+                print(encodedError)
+                let error = APIError(error: encodedError as NSError)
+                completion(false,nil,error)
+            //break
+            }
+        }
+    }
+    
     class func uploadDocs(param: Dictionary<String, Any>?, imageData: Data?,fileInfo:FileInfo, completion: @escaping (Bool, NSDictionary?, APIError?) -> Void) {
         
         //internet check

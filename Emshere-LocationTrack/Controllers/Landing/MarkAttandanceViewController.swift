@@ -12,6 +12,7 @@ import Alamofire
 import CoreLocation
 import GoogleMaps
 import MapKit
+import DropDown
 
 class MarkAttandanceViewController: UIViewController {
     
@@ -49,6 +50,8 @@ class MarkAttandanceViewController: UIViewController {
     //UICollectionView!
     @IBOutlet var footerViewHeightConstaint: NSLayoutConstraint!
     @IBOutlet var punchInButnHeightConstraint: NSLayoutConstraint!
+    
+    let dropDown = DropDown()
     
     
     //MARK:- viewController Delegate methods
@@ -235,11 +238,12 @@ class MarkAttandanceViewController: UIViewController {
         self.navigationItem.setLeftBarButtonItems([logo], animated:true )
         
         let dotsButton = UIButton(type: .custom)
+         //MARK:LocationUpdate in tracking  code on 25-07-2021
         dotsButton.setBackgroundImage(UIImage(named: "ic-vertical-dots"), for: .normal)
-        dotsButton.addTarget(self, action: #selector(showNotifications), for: .touchUpInside)
+        dotsButton.addTarget(self, action: #selector(navigateToChangePasswordVc), for: .touchUpInside)
         let notificationBarButton = UIBarButtonItem(customView: dotsButton)
         notificationBarButton.setBadge(text: Const.notificationBadgeCount)
-        
+        dropDown.anchorView = notificationBarButton
         //  let synchBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_action_sync"), style: .done, target: self, action: #selector(syncData))
         navigationItem.setRightBarButtonItems([notificationBarButton], animated: true)
     }
@@ -332,8 +336,7 @@ class MarkAttandanceViewController: UIViewController {
         }
         
     } // end ogf get info func
-    
-    
+        
     func showAlert(message:String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -390,8 +393,17 @@ class MarkAttandanceViewController: UIViewController {
         }
     }
     
-    @objc func showNotifications() {
-       
+    @objc func navigateToChangePasswordVc() {
+        dropDown.dataSource = ["Change Password"]
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+          print("Selected item: \(item) at index: \(index)")
+            let changePaswordView = UIStoryboard.Main().instantiateViewController(withIdentifier: "ChangePasswordViewController")as!ChangePasswordViewController
+             self.navigationController?.pushViewController(changePaswordView, animated: true)
+        }
+        dropDown.width = 200.0
+        dropDown.show()
+//       let changePaswordView = UIStoryboard.Main().instantiateViewController(withIdentifier: "ChangePasswordViewController")as!ChangePasswordViewController
+//        self.navigationController?.pushViewController(changePaswordView, animated: true)
     }
     
     @objc func syncData() {
@@ -874,8 +886,7 @@ class MarkAttandanceViewController: UIViewController {
             })
         }
     }
-    
-    
+        
     private func dummyTakePhoto(){
         self.capturedPhoto = #imageLiteral(resourceName: "attendance_through")
         print("self.capturedPhoto",self.capturedPhoto)
@@ -899,6 +910,7 @@ class MarkAttandanceViewController: UIViewController {
             }
         }
     }
+    
     func getAddress(currentAdd : @escaping ( _ returnAddress :String)->Void){
         
         let geocoder = GMSGeocoder()

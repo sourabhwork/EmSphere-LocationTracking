@@ -58,14 +58,27 @@ class ChangePasswordViewController: UIViewController {
         
         self.setSideMenuBarItem()
         self.title = "Change Password"
-        
-        let bellButton = UIButton(type: .custom)
-        bellButton.setBackgroundImage(#imageLiteral(resourceName: "icon_notification"), for: .normal)
-        bellButton.addTarget(self, action: #selector(showNotifications), for: .touchUpInside)
-        let notificationBarButton = UIBarButtonItem(customView: bellButton)
-        notificationBarButton.setBadge(text: Const.notificationBadgeCount)//logo
+        //       self.addLeftBarButtonWithImage(#imageLiteral(resourceName: "ic_action_toolbarleft_arrow"))
+        //        let bellButton = UIButton(type: .custom)
+        //        bellButton.setBackgroundImage(#imageLiteral(resourceName: "icon_notification"), for: .normal)
+        //        bellButton.addTarget(self, action: #selector(showNotifications), for: .touchUpInside)
+        //        let notificationBarButton = UIBarButtonItem(customView: bellButton)
+        //        notificationBarButton.setBadge(text: Const.notificationBadgeCount)//logo
         // self.navigationController?.navigationBar.barTintColor = .clear
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 44))
+        let backImageButton = UIButton(type: .custom)
+        backImageButton.frame = CGRect(x: 0, y: 9, width: 25, height: 25)
+        backImageButton.setBackgroundImage(#imageLiteral(resourceName: "ic_action_toolbarleft_arrow"), for: .normal)
+        backImageButton.addTarget(self, action: #selector(didTappedCloseButn), for: .touchUpInside)
+        view.addSubview(backImageButton)
         
+        let logoImage = UIImageView(frame: CGRect(x: 33, y: 9, width: 25, height: 25))
+        logoImage.image = UIImage(named: "em_logo_small.png")
+        logoImage.contentMode = .scaleAspectFit
+        view.addSubview(logoImage)        
+        let leftButton = UIBarButtonItem(customView: view)        
+        
+        navigationItem.leftBarButtonItem = leftButton
     }
     
     func setLoginView(){
@@ -113,8 +126,9 @@ class ChangePasswordViewController: UIViewController {
     }
     
     func didSetupHomeScreen(){
-       
+        self.navigationController?.popViewController(animated: true)
     }
+    
     func setupHomeScreen() {
 
            let appDelegate = UIApplication.shared.delegate as! AppDelegate

@@ -455,6 +455,16 @@ struct DataModel {
            self.token = token
        }
     
+    //MARK:LocationUpdate in tracking  code on 25-07-2021
+       init(employeeId: String?, deviceid: String?,latitude:String?, longitude: String?, locationAddress: String?,locationProvider: String?) {
+           self.employeeId = employeeId
+           self.deviceId = deviceid
+           self.latitude = latitude
+           self.longitude = longitude
+           self.locationAddress = locationAddress
+           self.locationProvider = locationProvider
+       }
+    
     
     func toJSON() -> [String: Any] {
         let json = ["id": id,

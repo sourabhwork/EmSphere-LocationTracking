@@ -51,6 +51,10 @@ class Const {
             return "http://125.99.69.58/ValueLab/app/api/EmployeeApi/"
             
         }
+        
+        static var locationUrl:String {
+              return "http://emcloud.emsphere.com/Enterprise_LocationTracking_Mobileapp/app/api/EmployeeAPi/AddEmployeeMobileLocationTrackingdetails"
+        }
     }
     
     
