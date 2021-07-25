@@ -175,7 +175,7 @@ class LoginViewController: UIViewController {
          appDelegate.window?.makeKeyAndVisible()
          */
         if let markAttendanceVC = UIStoryboard.Main().instantiateViewController(withIdentifier: "MarkAttandanceViewController") as? MarkAttandanceViewController {
-            //let navigation = UINavigationController(rootViewController: markAttendanceVC)
+            let navigation = UINavigationController(rootViewController: markAttendanceVC)
             self.navigationController?.pushViewController(markAttendanceVC, animated: true)
             //self.present(markAttendanceVC, animated: true, completion: nil)
         }

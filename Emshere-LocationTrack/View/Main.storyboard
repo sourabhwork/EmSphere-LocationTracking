@@ -892,52 +892,6 @@
                                     <outlet property="delegate" destination="I3z-5i-nZK" id="ptD-l6-Txc"/>
                                 </connections>
                             </tableView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eJJ-6M-fnt">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MJr-1H-Z68"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="HRP-9g-i3F">
-                                    <size key="itemSize" width="90" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="KuV-WQ-vbL" customClass="HomeTabCollectionViewCell" customModule="Emshere_LocationTrack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attendence Regularization" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st9-Ml-Rs5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
-                                                    <color key="backgroundColor" red="0.29803921570000003" green="0.32156862749999998" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="0.29803921570000003" green="0.32156862749999998" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="st9-Ml-Rs5" firstAttribute="leading" secondItem="KuV-WQ-vbL" secondAttribute="leading" id="McO-e2-izI"/>
-                                            <constraint firstAttribute="bottom" secondItem="st9-Ml-Rs5" secondAttribute="bottom" id="ORl-LS-Czb"/>
-                                            <constraint firstAttribute="trailing" secondItem="st9-Ml-Rs5" secondAttribute="trailing" id="P6v-uN-TzB"/>
-                                            <constraint firstItem="st9-Ml-Rs5" firstAttribute="top" secondItem="KuV-WQ-vbL" secondAttribute="top" id="o6u-LI-PqS"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="tabNameLabel" destination="st9-Ml-Rs5" id="0WB-1v-OPc"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="I3z-5i-nZK" id="QH2-p2-0Qj"/>
-                                    <outlet property="delegate" destination="I3z-5i-nZK" id="Sn2-Q0-cwe"/>
-                                </connections>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GSd-jP-wRl"/>
                         <color key="backgroundColor" red="0.2274509804" green="0.23529411759999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -952,7 +906,6 @@
                             <constraint firstItem="IxR-eX-2iC" firstAttribute="centerX" secondItem="jDi-xb-XuY" secondAttribute="centerX" id="FQd-jW-sDN"/>
                             <constraint firstItem="dZ6-aI-Cmj" firstAttribute="height" secondItem="FK3-QZ-999" secondAttribute="height" id="Fim-c1-fgU"/>
                             <constraint firstItem="AOS-v2-5H9" firstAttribute="top" secondItem="IxR-eX-2iC" secondAttribute="bottom" constant="18" id="GKJ-f9-6Al"/>
-                            <constraint firstItem="eJJ-6M-fnt" firstAttribute="leading" secondItem="jDi-xb-XuY" secondAttribute="leading" id="JCA-t6-1JQ"/>
                             <constraint firstItem="IxR-eX-2iC" firstAttribute="height" secondItem="jDi-xb-XuY" secondAttribute="width" multiplier="0.4" id="LkT-Y3-iOJ"/>
                             <constraint firstItem="l3B-De-6tO" firstAttribute="top" secondItem="vRv-oQ-G7y" secondAttribute="bottom" id="WMB-h9-ozd"/>
                             <constraint firstItem="AOS-v2-5H9" firstAttribute="centerX" secondItem="jDi-xb-XuY" secondAttribute="centerX" id="XEg-zc-xFF"/>
@@ -960,9 +913,7 @@
                             <constraint firstItem="l3B-De-6tO" firstAttribute="centerX" secondItem="vRv-oQ-G7y" secondAttribute="centerX" id="YYq-Js-KfQ"/>
                             <constraint firstItem="vRv-oQ-G7y" firstAttribute="width" secondItem="jDi-xb-XuY" secondAttribute="width" constant="-30" id="aWx-xm-jRY"/>
                             <constraint firstItem="BXi-Oj-UYG" firstAttribute="top" secondItem="l3B-De-6tO" secondAttribute="bottom" constant="20" id="cXU-up-hjm"/>
-                            <constraint firstAttribute="trailing" secondItem="eJJ-6M-fnt" secondAttribute="trailing" id="cgp-f8-vIS"/>
                             <constraint firstItem="dZ6-aI-Cmj" firstAttribute="top" secondItem="FK3-QZ-999" secondAttribute="top" id="d8E-zJ-OCq"/>
-                            <constraint firstItem="BXi-Oj-UYG" firstAttribute="top" secondItem="eJJ-6M-fnt" secondAttribute="bottom" id="edj-tO-ACU"/>
                             <constraint firstItem="IxR-eX-2iC" firstAttribute="width" secondItem="jDi-xb-XuY" secondAttribute="width" multiplier="0.66" id="hFy-VY-0xU"/>
                             <constraint firstItem="l3B-De-6tO" firstAttribute="width" secondItem="vRv-oQ-G7y" secondAttribute="width" id="lnh-BR-grj"/>
                             <constraint firstItem="dZ6-aI-Cmj" firstAttribute="width" secondItem="FK3-QZ-999" secondAttribute="width" id="mDE-ma-dNw"/>
@@ -976,8 +927,6 @@
                     <connections>
                         <outlet property="backgroundMapView" destination="MG6-IC-zyQ" id="tuP-ey-pIr"/>
                         <outlet property="dateLabel" destination="AOS-v2-5H9" id="tbM-Bz-sjs"/>
-                        <outlet property="footerViewHeightConstaint" destination="MJr-1H-Z68" id="IUS-Hn-f8P"/>
-                        <outlet property="homeTabCollectionView" destination="eJJ-6M-fnt" id="maT-x2-vnb"/>
                         <outlet property="inPunchButton" destination="FK3-QZ-999" id="YVH-XT-3pt"/>
                         <outlet property="lastPunchLabel" destination="Ixj-NY-7PI" id="O7R-Cy-rmn"/>
                         <outlet property="outPunchButton" destination="dZ6-aI-Cmj" id="lKI-LN-krW"/>

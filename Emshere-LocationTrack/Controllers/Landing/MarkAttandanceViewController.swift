@@ -45,7 +45,7 @@ class MarkAttandanceViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet var backgroundMapView: UIView!
-    @IBOutlet var homeTabCollectionView: UICollectionView!
+    //@IBOutlet var homeTabCollectionView: UICollectionView!
     //UICollectionView!
     @IBOutlet var footerViewHeightConstaint: NSLayoutConstraint!
     @IBOutlet var punchInButnHeightConstraint: NSLayoutConstraint!
@@ -54,9 +54,11 @@ class MarkAttandanceViewController: UIViewController {
     //MARK:- viewController Delegate methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         // commented for second build
-        self.navigationController?.navigationBar.isHidden = true
+            //#colorLiteral(red: 0.3745557666, green: 0.3901350498, blue: 0.4719911814, alpha: 1)
+        //#colorLiteral(red: 0.2125797272, green: 0.2368075252, blue: 0.3497058153, alpha: 1)
         if !(locationManager.enableLocationService()){
             self.showLocationServiceAlert()
         }
@@ -148,6 +150,7 @@ class MarkAttandanceViewController: UIViewController {
         super.viewWillDisappear(true)
         timer?.invalidate()
         locationManager.stopUpdatingLocation()
+        
     }
     
     func setLastPunchAttribuedString(date:String,inOutStatus:String) {
@@ -204,30 +207,37 @@ class MarkAttandanceViewController: UIViewController {
     }
     
     func setNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2125797272, green: 0.2368075252, blue: 0.3497058153, alpha: 1)
+                    
         navigationController?.navigationBar.layer.shadowColor = UIColor.white.cgColor
         navigationController?.navigationBar.layer.shadowOpacity = 1
         navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 0)
         navigationController?.navigationBar.layer.shadowRadius = 0
+                
         self.title = "Mark Attandance"
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 44))
-        let backImageButton = UIButton(type: .custom)
-        backImageButton.frame = CGRect(x: 0, y: 9, width: 25, height: 25)
-        backImageButton.setBackgroundImage(#imageLiteral(resourceName: "ic_action_toolbarleft_arrow"), for: .normal)
-        backImageButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
-        let logoImage = UIImageView(frame: CGRect(x: 33, y: 9, width: 25, height: 25))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 44))
+//        let backImageButton = UIButton(type: .custom)
+//        backImageButton.frame = CGRect(x: 0, y: 9, width: 25, height: 25)
+//        backImageButton.setBackgroundImage(#imageLiteral(resourceName: "ic_action_toolbarleft_arrow"), for: .normal)
+//        backImageButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+        
+        let logoImage = UIImageView(frame: CGRect(x: 33, y: 9, width: 30, height: 30))
         logoImage.image = UIImage(named: "em_logo_small.png")
         logoImage.contentMode = .scaleAspectFit
-        view.addSubview(backImageButton)
+       // view.addSubview(backImageButton)
         view.addSubview(logoImage)
         let logo = UIBarButtonItem(customView: view)
         logo.action = #selector(back)
         self.navigationItem.setLeftBarButtonItems([logo], animated:true )
         
-        let bellButton = UIButton(type: .custom)
-        bellButton.setBackgroundImage(#imageLiteral(resourceName: "icon_notification"), for: .normal)
-        bellButton.addTarget(self, action: #selector(showNotifications), for: .touchUpInside)
-        let notificationBarButton = UIBarButtonItem(customView: bellButton)
+        let dotsButton = UIButton(type: .custom)
+        dotsButton.setBackgroundImage(UIImage(named: "ic-vertical-dots"), for: .normal)
+        dotsButton.addTarget(self, action: #selector(showNotifications), for: .touchUpInside)
+        let notificationBarButton = UIBarButtonItem(customView: dotsButton)
         notificationBarButton.setBadge(text: Const.notificationBadgeCount)
         
         //  let synchBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_action_sync"), style: .done, target: self, action: #selector(syncData))
@@ -264,15 +274,15 @@ class MarkAttandanceViewController: UIViewController {
         let dic1 = UserProfile.getApplicationArrayDic()
         //print("dic1",dic1)
         self.homeTabArray = dic1!["HomeApplnArray"]!
-        if(self.homeTabArray.count == 0){
-            self.homeTabCollectionView.backgroundColor = UIColor.clear
-        }else {
-            self.homeTabCollectionView.backgroundColor = UIColor.white
-        }
+//        if(self.homeTabArray.count == 0){
+//            self.homeTabCollectionView.backgroundColor = UIColor.clear
+//        }else {
+//            self.homeTabCollectionView.backgroundColor = UIColor.white
+//        }
         
         //self.setupHomeTabLayout()
         self.viewDidLayoutSubviews()
-        self.homeTabCollectionView.reloadData()
+        //self.homeTabCollectionView.reloadData()
     }
     
     func getAttenadnceInfo(remarkStr:String){
@@ -764,12 +774,12 @@ class MarkAttandanceViewController: UIViewController {
             sender.isSelected = false
             isCollasable = false
             tableView.isHidden = true
-            self.homeTabCollectionView.isHidden = false
+            //self.homeTabCollectionView.isHidden = false
         } else {
             sender.transform = sender.transform.rotated(by: CGFloat( (Double.pi / 2)))
             sender.isSelected = true
             isCollasable = true
-            self.homeTabCollectionView.isHidden = true
+            //self.homeTabCollectionView.isHidden = true
             tableView.isHidden = false
         }
         self.tableView.reloadData()
@@ -1099,20 +1109,20 @@ class MarkAttandanceTableCell: UITableViewCell {
     }
 }
 
-// MARK:- UICollectionView Delegate and Datasource
-
-extension MarkAttandanceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeTabCollectionViewCell
-        return cell
-    }
-}
+//// MARK:- UICollectionView Delegate and Datasource
+//
+//extension MarkAttandanceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 4
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeTabCollectionViewCell
+//        return cell
+//    }
+//}
