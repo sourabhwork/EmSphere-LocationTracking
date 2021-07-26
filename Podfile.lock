@@ -94,6 +94,7 @@ PODS:
   - PromisesObjC (1.2.11)
   - SkyFloatingLabelTextField (4.0.0)
   - SwiftKeychainWrapper (4.0.1)
+  - SwiftLocation/Core (5.1.0)
   - SwiftMessages (8.0.5):
     - SwiftMessages/App (= 8.0.5)
   - SwiftMessages/App (8.0.5)
@@ -113,6 +114,7 @@ DEPENDENCIES:
   - PKHUD (~> 5.0)
   - SkyFloatingLabelTextField
   - SwiftKeychainWrapper
+  - SwiftLocation/Core
   - SwiftMessages
   - SwiftyJSON
 
@@ -141,6 +143,7 @@ SPEC REPOS:
     - PromisesObjC
     - SkyFloatingLabelTextField
     - SwiftKeychainWrapper
+    - SwiftLocation
     - SwiftMessages
     - SwiftyJSON
 
@@ -168,9 +171,10 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+  SwiftLocation: 83e0ea75a1969cee3a1197e2b7095603fc23fde5
   SwiftMessages: 539fd54a766bf08ec667e90aa141c44b8b8aaa55
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 95484308ba68921c6c25849e4eee8321824877b1
+PODFILE CHECKSUM: 064561b92260b1068d134e301f753f851951e12b
 
 COCOAPODS: 1.10.1

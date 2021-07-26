@@ -43,10 +43,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         } else if CLLocationManager.authorizationStatus() == .denied {
             locationManager.requestWhenInUseAuthorization()
         }
-
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation // The accuracy of the location data
         locationManager.distanceFilter = 10 // The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
         locationManager.delegate = self
+        locationManager.startUpdatingLocation()
     }
 
     func startUpdatingLocation() {

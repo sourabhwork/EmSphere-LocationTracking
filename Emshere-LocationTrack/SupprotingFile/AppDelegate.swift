@@ -17,6 +17,7 @@ import SwiftMessages
 import UserNotifications
 import IQKeyboardManagerSwift
 import SwiftKeychainWrapper
+import SwiftLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -32,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     
     var window: UIWindow?
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -48,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         GMSServices.provideAPIKey("AIzaSyAGFc19Au7TQUwyHFsja-J6x5rAnSbJws8")
         
         //Firebase configuration
-        self.setupFirebase(application: application)
+        //self.setupFirebase(application: application)
         
         // Use Firebase library to configure APIs
         //FirebaseApp.configure()
@@ -98,11 +101,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             print("Enter in setupLogin")
             self.setupLogin()
         }
-        
+        // Create code by sourabh 26-7-2021
+        SwiftLocationManager.initilizeSwiftLocation()        
+//        self.bgTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+//        RunLoop.main.add(bgTimer, forMode: .common)
         
         return true
     }
-    
     
     func setupHome(){
         
@@ -231,6 +236,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        
+    }
 
 }
 

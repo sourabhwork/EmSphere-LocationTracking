@@ -169,10 +169,11 @@ class LicenseKeyViewController: UIViewController {
             //self.navigationController?.pushViewController(otpView, animated: true)
             
         } else {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+           // let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let loginViewController = UIStoryboard.Main().instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            appDelegate.window?.rootViewController = NavigationBarUtils.setupNavigationController(viewController: loginViewController)
-            appDelegate.window?.makeKeyAndVisible()
+            let window = UIApplication.shared.windows.first
+            window?.rootViewController = NavigationBarUtils.setupNavigationController(viewController: loginViewController)
+            window?.makeKeyAndVisible()
             /*
              let loginView = UIStoryboard.Main().instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
              self.present(loginView, animated: true, completion: nil) */

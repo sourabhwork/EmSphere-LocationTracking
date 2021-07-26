@@ -11,6 +11,7 @@ target 'Emshere-LocationTrack' do
     # pod 'Alamofire', '~> 4.5' // was 4.7.2
      pod 'Alamofire', '~> 4.9'  #'~> 5.0.0-rc.3'
      pod 'AlamofireImage'
+     pod 'SwiftLocation/Core'
 
      #Firebase
      pod 'Firebase/Core'

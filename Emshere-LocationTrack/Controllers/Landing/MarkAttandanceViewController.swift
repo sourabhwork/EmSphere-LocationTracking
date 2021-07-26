@@ -13,6 +13,7 @@ import CoreLocation
 import GoogleMaps
 import MapKit
 import DropDown
+import SwiftLocation
 
 class MarkAttandanceViewController: UIViewController {
     
@@ -51,8 +52,8 @@ class MarkAttandanceViewController: UIViewController {
     @IBOutlet var footerViewHeightConstaint: NSLayoutConstraint!
     @IBOutlet var punchInButnHeightConstraint: NSLayoutConstraint!
     
-    let dropDown = DropDown()
-    
+    fileprivate let dropDown    = DropDown()
+    fileprivate var bgTimer     = Timer()
     
     //MARK:- viewController Delegate methods
     override func viewDidLoad() {
@@ -62,11 +63,14 @@ class MarkAttandanceViewController: UIViewController {
         // commented for second build
             //#colorLiteral(red: 0.3745557666, green: 0.3901350498, blue: 0.4719911814, alpha: 1)
         //#colorLiteral(red: 0.2125797272, green: 0.2368075252, blue: 0.3497058153, alpha: 1)
-        if !(locationManager.enableLocationService()){
-            self.showLocationServiceAlert()
-        }
+//        if !(locationManager.enableLocationService()){
+//            self.showLocationServiceAlert()
+//        }
+//        if SwiftLocation.authorizationStatus == .denied || SwiftLocation.authorizationStatus == .restricted || SwiftLocation.authorizationStatus == .notDetermined {
+//            self.showLocationServiceAlert()
+//        }
         lastPunchLabel.text = ""
-        locationManager.startUpdatingLocation()
+        //locationManager.startUpdatingLocation()
         self.setNavigationBar()
         
         let registrationDetails = UserProfile.getUserProfile()
@@ -106,6 +110,7 @@ class MarkAttandanceViewController: UIViewController {
         // self.syncOfflineData()
         
     }
+    
     func setCameraLayout() {
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
@@ -136,17 +141,20 @@ class MarkAttandanceViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if CLLocationManager.locationServicesEnabled() {
-            // Location services are available, so query the user’s location.
-            print("Location service is on")
-        } else {
-            // Update your app’s UI to show that the location is unavailable.
-            print("Location service is off")
+        // Create code by sourabh 26-7-2021
+        if !SwiftLocationManager.getIsAuthorization() {
+            self.showLocationServiceAlert()
         }
-        
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateDate), userInfo: nil, repeats: true)
         self.setHomeTabApplicatonArray()
+        
+        // Set timer for location tracking
+        if !bgTimer.isValid {
+            self.bgTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+            RunLoop.main.add(bgTimer, forMode: .common)
+            RunLoop.current.run()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -154,6 +162,14 @@ class MarkAttandanceViewController: UIViewController {
         timer?.invalidate()
         locationManager.stopUpdatingLocation()
         
+    }
+    
+    @objc func timerUpdate() {
+        print("$$$$$$$$$$$$$  Timer update $$$$$$$$$$$$$$$$$$$$")
+        let lastLocation = SwiftLocationManager.lastKnownLocation().coordinate
+        print("Last location is ",lastLocation)
+        let address = SwiftLocationManager.getAddress(location: lastLocation)
+        print("Last Location address",address)
     }
     
     func setLastPunchAttribuedString(date:String,inOutStatus:String) {

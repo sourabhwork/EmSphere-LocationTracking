@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A818EB2526AC35C0004875B8 /* HomeTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818EB2426AC35C0004875B8 /* HomeTabCollectionViewCell.swift */; };
+		A86471D726AF011E00203478 /* SwiftLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86471D626AF011E00203478 /* SwiftLocationManager.swift */; };
 		C02B8ED22B05955518AF8423 /* Pods_Emshere_LocationTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C928713B0E3C5B466CAF7574 /* Pods_Emshere_LocationTrack.framework */; };
 		CC42914C26A47D7700EEB435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC42914B26A47D7700EEB435 /* AppDelegate.swift */; };
 		CC42914E26A47D7700EEB435 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC42914D26A47D7700EEB435 /* SceneDelegate.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		A818EB2426AC35C0004875B8 /* HomeTabCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		A86471D626AF011E00203478 /* SwiftLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLocationManager.swift; sourceTree = "<group>"; };
 		C928713B0E3C5B466CAF7574 /* Pods_Emshere_LocationTrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emshere_LocationTrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC42914826A47D7700EEB435 /* Emshere-LocationTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emshere-LocationTrack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC42914B26A47D7700EEB435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				CC42917826A47E7800EEB435 /* LocalModel */,
 				CC42917A26A47E7800EEB435 /* API */,
 				CC42918126A47E7800EEB435 /* LocationManager.swift */,
+				A86471D626AF011E00203478 /* SwiftLocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				CC4291C926A47E7900EEB435 /* UserProfile.swift in Sources */,
 				CC4291B026A47E7900EEB435 /* MarkAttendanceInfo.swift in Sources */,
 				CC4291BA26A47E7900EEB435 /* MarkAttandanceViewController.swift in Sources */,
+				A86471D726AF011E00203478 /* SwiftLocationManager.swift in Sources */,
 				CC4291B126A47E7900EEB435 /* DataBaseHandler.swift in Sources */,
 				CC4291B626A47E7900EEB435 /* APIClient.swift in Sources */,
 				CC4291A826A47E7900EEB435 /* AppVersionChecker.swift in Sources */,
@@ -730,7 +734,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.emsphere.emspere-locationTrack";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emsphere.EMTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -749,7 +753,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.emsphere.emspere-locationTrack";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emsphere.EMTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

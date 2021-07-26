@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import GoogleMaps
+import SwiftLocation
 
 class LoginViewController: UIViewController {
     
@@ -63,21 +64,26 @@ class LoginViewController: UIViewController {
             self.remeberMeButton.isHidden = false
         }
         
-        if ((regiDic) != nil && UserProfile.isVisitToLocationVC() != nil && UserProfile.isVisitToLocationVC() != false){
-            if !(LocationManager.sharedInstance.enableLocationService()){
-                self.showLocationServiceAlert()
-            }
-        }
+//        if ((regiDic) != nil && UserProfile.isVisitToLocationVC() != nil && UserProfile.isVisitToLocationVC() != false){
+//            if !(LocationManager.sharedInstance.enableLocationService()){
+//                //self.showLocationServiceAlert()
+//            }
+//        }
         //  self.syncOfflineAttedanceData() //MARK:commnted on 30-05-2021 given sync button in those controller
         
         
         //MARK:code on 08-05-2021 if locaion permistion enable then start location service
-        if LocationManager.sharedInstance.enableLocationService(){
-            LocationManager.sharedInstance.startUpdatingLocation()
-        }
+        //Temp
+//        if LocationManager.sharedInstance.enableLocationService(){
+//            LocationManager.sharedInstance.startUpdatingLocation()
+//        }
         /*
          let otpView = UIStoryboard.Main().instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
          self.present(otpView, animated: true, completion: nil) */
+        //Create code by sourabh
+//        if SwiftLocation.authorizationStatus == .denied || SwiftLocation.authorizationStatus == .restricted || SwiftLocation.authorizationStatus == .notDetermined {
+//            self.showLocationServiceAlert()
+//        }
     }
     
     //MARK:code 08-05-2021 for setup navigation bar  in view did load it crashesh for some device
@@ -213,6 +219,7 @@ class LoginViewController: UIViewController {
         
         return false
     }
+    
     func setMobileConfurationData(dicArray:[NSDictionary]?){
         
         for dic in dicArray! {
