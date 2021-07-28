@@ -52,9 +52,14 @@ class Const {
             
         }
         
+        static var newAppUrl: String {
+            return "http://emcloud.emsphere.com/Enterprise_LocationTracking_Mobileapp/app/api/EmployeeAPi/"
+        }
+        
         static var locationUrl:String {
               return "http://emcloud.emsphere.com/Enterprise_LocationTracking_Mobileapp/app/api/EmployeeAPi/AddEmployeeMobileLocationTrackingdetails"
         }
+                
     }
     
     

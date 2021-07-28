@@ -53,7 +53,7 @@ class MarkAttandanceViewController: UIViewController {
     @IBOutlet var punchInButnHeightConstraint: NSLayoutConstraint!
     
     fileprivate let dropDown    = DropDown()
-    fileprivate var bgTimer     = Timer()
+    //fileprivate var bgTimer     = Timer()
     
     //MARK:- viewController Delegate methods
     override func viewDidLoad() {
@@ -107,8 +107,9 @@ class MarkAttandanceViewController: UIViewController {
         //self.setCameraLayout()
         
         UserProfile.saveIsVisitToLocationVC(status: true)
-        // self.syncOfflineData()
+        UserProfile.userIsLogin(value: true)
         
+        // self.syncOfflineData()
     }
     
     func setCameraLayout() {
@@ -142,7 +143,10 @@ class MarkAttandanceViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Create code by sourabh 26-7-2021
-        if !SwiftLocationManager.getIsAuthorization() {
+        if SwiftLocationManager.getIsAuthorization() {
+            // Create start timer for update location (code by sourabh) 27-07-2021
+            BackgroundManager.sharedInstance.startTimer()
+        } else {
             self.showLocationServiceAlert()
         }
         
@@ -150,11 +154,11 @@ class MarkAttandanceViewController: UIViewController {
         self.setHomeTabApplicatonArray()
         
         // Set timer for location tracking
-        if !bgTimer.isValid {
-            self.bgTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
-            RunLoop.main.add(bgTimer, forMode: .common)
-            RunLoop.current.run()
-        }
+//        if !bgTimer.isValid {
+//            self.bgTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+//            RunLoop.main.add(bgTimer, forMode: .common)
+//            RunLoop.current.run()
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -164,13 +168,13 @@ class MarkAttandanceViewController: UIViewController {
         
     }
     
-    @objc func timerUpdate() {
-        print("$$$$$$$$$$$$$  Timer update $$$$$$$$$$$$$$$$$$$$")
-        let lastLocation = SwiftLocationManager.lastKnownLocation().coordinate
-        print("Last location is ",lastLocation)
-        let address = SwiftLocationManager.getAddress(location: lastLocation)
-        print("Last Location address",address)
-    }
+//    @objc func timerUpdate() {
+//        print("$$$$$$$$$$$$$  Timer update $$$$$$$$$$$$$$$$$$$$")
+//        let lastLocation = SwiftLocationManager.lastKnownLocation().coordinate
+//        print("Last location is ",lastLocation)
+//        let address = SwiftLocationManager.getAddress(location: lastLocation)
+//        print("Last Location address",address)
+//    }
     
     func setLastPunchAttribuedString(date:String,inOutStatus:String) {
         

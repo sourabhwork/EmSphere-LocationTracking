@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     var isOTP = "0"
     var userName:String?
     var isExecuted = false
+   // fileprivate var bgTimer     = Timer()
     //MARK: - IBOutlets
     @IBOutlet var emailTextField: ACFloatingTextfield!
     @IBOutlet var passwordTextField: ACFloatingTextfield!
@@ -110,6 +111,7 @@ class LoginViewController: UIViewController {
             self.remeberMeBtn.isHidden = false
             self.remeberMeButton.isHidden = false
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -118,6 +120,14 @@ class LoginViewController: UIViewController {
             self.didsetupNavigationBar() //MARK:code 08-05-2021 in view did load it crashesh for some device
         }
     }
+    
+//    @objc func timerUpdate() {
+//        print("$$$$$$$$$$$$$  Timer update $$$$$$$$$$$$$$$$$$$$")
+//        let lastLocation = SwiftLocationManager.lastKnownLocation().coordinate
+//        print("Last location is ",lastLocation)
+//        let address = SwiftLocationManager.getAddress(location: lastLocation)
+//        print("Last Location address",address)
+//    }
     
     func setFontForIpad(){
         if(UIDevice.current.userInterfaceIdiom == .pad){
@@ -447,7 +457,7 @@ class LoginViewController: UIViewController {
         let emCode = empCode.trimmingCharacters(in: .whitespaces)
         parameters = ["userName": uName, "password": passwordTextField.text!, "deviceId": Const.uniqueDeviceUUID, "employeeCode": emCode]
         // }
-        
+        print("Parameter for login API = ",parameters)
         self.view.showLoading()
         APIManager.loginWithUrl(param:parameters! , url: url){ status, response, error in
             

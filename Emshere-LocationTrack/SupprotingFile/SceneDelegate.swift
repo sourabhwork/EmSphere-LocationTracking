@@ -48,11 +48,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         print("sceneDidEnterBackground  sceneDidEnterBackground")
         
-        
+        var employeeId = ""
+        if let registrationDetails = UserProfile.getUserProfile() {
+            employeeId = registrationDetails["EmployeeID"] ?? ""
+        }
+        //&& UserProfile.getUserIsLogin()
+        if SwiftLocationManager.getIsAuthorization() && !employeeId.isEmpty {
+            print("Enter inside getIsAuthorization and ")
+            BackgroundManager.sharedInstance.startTimer()
+            RunLoop.main.add(BackgroundManager.bgTimer, forMode: .common)
+            RunLoop.current.run()
+        }
     }
-        
-    
-   
 
     
 

@@ -17,31 +17,28 @@ class UtilityManager {
                 
                 if(dic["Key"]as!String == "HideLeaveApp"){
                     UserProfile.saveIsHideLeaveApp(status:dic["Value"]as?String )
-                    
                 }
                 if(dic.value(forKey: "Key")as!String == "HideCompOffApp"){
                     UserProfile.saveIsHideCompOffApp(status: dic.value(forKey: "Value")as?String)
-                    
                 }
                 if(dic.value(forKey: "Key")as!String == "HideRegularizationApp"){
                     UserProfile.saveIsHideRegularizationApp(status: dic.value(forKey: "Value")as?String)
-                    
                 }
                 if(dic.value(forKey: "Key")as!String == "HideWFHApp"){
-                    UserProfile
-                        .saveIsHideWFHApp(status: dic.value(forKey: "Value")as?String)
-                    
+                    UserProfile.saveIsHideWFHApp(status: dic.value(forKey: "Value")as?String)
                 }
                 if(dic.value(forKey: "Key")as!String == "HideOutDutyApp"){
                     UserProfile.saveIsHideOutDutyApp(status:dic.value(forKey: "Value")as?String )
-                    
                 }
                 if(dic.value(forKey: "Key")as!String == "HideMarkAttendance"){
                     UserProfile.saveIshideMarkAttendance(status: dic.value(forKey: "Value")as?String)
-                    
                 }
                 if(dic.value(forKey: "Key")as!String == "Remark"){
                     UserProfile.saveIsRemark(status: dic.value(forKey: "Value")as?String)
+                }
+                if(dic.value(forKey: "Key")as!String == "LocationTrackingTimeIntervalinMinute"){
+                    //UserProfile.saveIsRemark(status: dic.value(forKey: "Value")as?String)
+                    UserProfile.saveLocationTrackTime(status: dic.value(forKey: "Value")as?String)
                 }
                 if(dic.value(forKey: "Key")as!String == "AllowLoginUsingOTP"){
                     UserProfile.saveIsAllowLoginUsingOTP(status:dic.value(forKey: "Value")as?String )
@@ -78,8 +75,7 @@ class UtilityManager {
                 }
                 
                 if(dic.value(forKey: "Key")as!String == "AllowShifSelectionInAttendanceRegularizationApp"){
-                    UserProfile.saveShifSelectionInAttendanceRegularizationApp(status: dic.value(forKey: "Value")as?String)
-                    
+                    UserProfile.saveShifSelectionInAttendanceRegularizationApp(status: dic.value(forKey: "Value")as?String)                    
                 }
                 if(dic.value(forKey: "Key")as!String == "RegularizationAppDayStatusAsPerShiftPolicy"){
                     UserProfile.saveRegularizationAppDayStatusAsPerShiftPolicy(status: dic.value(forKey: "Value")as?String)

@@ -1227,6 +1227,7 @@ class APIManager {
         //let url = UserProfile.getServiceURL()! + "/EmployeeApp/" + "GetMobileApplicationConfiguration"
         
         let url = UserProfile.getServiceURL()! + Const.appUrl.employeeApp + "GetMobileApplicationConfiguration"
+        print("getMobileApplicationConfiguration url ",url)
         Alamofire.request(url, method: .post).responseJSON{ response in
             
             switch response.result {

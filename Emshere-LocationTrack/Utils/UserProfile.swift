@@ -173,13 +173,35 @@ class UserProfile {
         UserDefaults.standard.set(userData, forKey: "IS_HIDEREMARK")
         UserDefaults.standard.synchronize()
     }
-
+    
     static func getIsRemark() -> String? {
         guard let userInfo = UserDefaults.standard.value(forKeyPath: "IS_HIDEREMARK") else {
             print("Empty user data")
             return nil
         }
         return userInfo as? String
+    }
+    
+    //Store Location tracking time interval minute
+    static func saveLocationTrackTime(status: String?) {
+        guard let userData = status else {
+            print("Empty user data")
+            return
+        }
+        // remove privious obj & add new one
+        if UserDefaults.standard.value(forKey: "locationTrack") != nil {
+            UserDefaults.standard.removeObject(forKey: "locationTrack")
+        }
+        UserDefaults.standard.set(userData, forKey: "locationTrack")
+        UserDefaults.standard.synchronize()
+    }
+
+    static func getLocationTrackTime() -> String? {
+        guard let trackTime = UserDefaults.standard.value(forKeyPath: "locationTrack") else {
+            print("Empty user data")
+            return nil
+        }
+        return trackTime as? String
     }
 
     //Store ishideMarkAttendance
@@ -857,4 +879,18 @@ class UserProfile {
         UserDefaults.standard.synchronize()
 
   }
+    
+    static func userIsLogin(value: Bool) {
+        let userDefault = UserDefaults.standard
+        userDefault.bool(forKey: "isUserLogin")
+        userDefault.synchronize()
+    }
+    
+    static func getUserIsLogin()->Bool {
+        var value = false
+        let userDefaults = UserDefaults.standard
+        value = userDefaults.bool(forKey: "isUserLogin")
+        userDefaults.synchronize()
+        return value
+    }
 }

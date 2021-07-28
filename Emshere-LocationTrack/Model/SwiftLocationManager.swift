@@ -59,18 +59,38 @@ class SwiftLocationManager {
     
     class func getVisitLocation() {
         SwiftLocation.visits(activityType: .fitness).then { result in
-            print("A new visits to \(result.data)")
+            print("😎A new visits to 😎\(result.data)")
         }
     }
     
-    class func getgGPSLocation() {
+    class func getgGPSLocation(coordinate: @escaping(CLLocationCoordinate2D)->Void) {
         print("&&&&&&&&&&&&&&&&&&&&&&&&")
-        SwiftLocation.gpsLocation().then{
-            print("Location is ",$0.location)
+        SwiftLocation.gpsLocation().then {
+            print("😁Location is 😁",$0.location)
+            coordinate($0.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
         }
     }
     
-    class func getAddressWithGoogle(coordinate: CLLocationCoordinate2D){
+    class func getDetailsOfLocation(coordinate: @escaping(CLLocationCoordinate2D)->Void) {
+        SwiftLocation.gpsLocationWith {
+            // configure everything about your request
+            $0.subscription = .continous // continous updated until you stop it
+            $0.accuracy = .city
+            $0.minDistance = 1 // updated every 300mts or more
+            $0.minTimeInterval = 1 // updated each 30 seconds or more
+            $0.activityType = .automotiveNavigation
+            //$0.timeout = .delayed(5) // 5 seconds of timeout after auth granted
+        }.then { result in // you can attach one or more subscriptions via `then`.
+            switch result {
+            case .success(let newData):
+                coordinate(newData.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
+            case .failure(let error):
+                print("An error has occurred: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    class func getAddressWithGoogle(coordinate: CLLocationCoordinate2D, address: @escaping(String)->Void){
         
         if !Connectivity.isConnectedToInternet() {
             return
@@ -104,6 +124,7 @@ class SwiftLocationManager {
                 if pm.postalCode != nil {
                     addressString = addressString + pm.postalCode! + " "
                 }
+                address(addressString)
                 //completionHandler(addressString,error)
                 print("my address=",addressString)
                 // self.currentAddress = addressString
