@@ -13,6 +13,8 @@ import GoogleMaps
 
 class SwiftLocationManager {
     
+    static var lastLocation = CLLocationCoordinate2D()
+    
     class func initilizeSwiftLocation() {
         SwiftLocation.allowsBackgroundLocationUpdates = true
         SwiftLocation.requestAuthorization(.onlyInUse) { newStatus in
@@ -21,6 +23,7 @@ class SwiftLocationManager {
         SwiftLocation.visits(activityType: .fitness).then { result in
             print("A new visits to \(result.data)")
         }
+        
     }
         
     
@@ -71,7 +74,8 @@ class SwiftLocationManager {
         }
     }
     
-    class func getDetailsOfLocation(coordinate: @escaping(CLLocationCoordinate2D)->Void) {
+//    class func getDetailsOfLocation(coordinate: @escaping(CLLocationCoordinate2D)->Void) {
+    class func getDetailsOfLocation() {
         SwiftLocation.gpsLocationWith {
             // configure everything about your request
             $0.subscription = .continous // continous updated until you stop it
@@ -83,7 +87,8 @@ class SwiftLocationManager {
         }.then { result in // you can attach one or more subscriptions via `then`.
             switch result {
             case .success(let newData):
-                coordinate(newData.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
+                self.lastLocation = newData.coordinate
+                //coordinate(newData.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
             case .failure(let error):
                 print("An error has occurred: \(error.localizedDescription)")
             }
