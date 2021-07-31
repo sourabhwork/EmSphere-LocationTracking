@@ -17,15 +17,14 @@ class SwiftLocationManager {
     
     class func initilizeSwiftLocation() {
         SwiftLocation.allowsBackgroundLocationUpdates = true
+        SwiftLocation.pausesLocationUpdatesAutomatically = true
         SwiftLocation.requestAuthorization(.onlyInUse) { newStatus in
             print("New status == \(newStatus.description)")
         }
         SwiftLocation.visits(activityType: .fitness).then { result in
             print("A new visits to \(result.data)")
         }
-        
     }
-        
     
     class func getIsAuthorization()->Bool {
         var result = false
@@ -78,16 +77,17 @@ class SwiftLocationManager {
     class func getDetailsOfLocation() {
         SwiftLocation.gpsLocationWith {
             // configure everything about your request
-            $0.subscription = .continous // continous updated until you stop it
+            $0.subscription = .continous
             $0.accuracy = .city
-            $0.minDistance = 1 // updated every 300mts or more
-            $0.minTimeInterval = 1 // updated each 30 seconds or more
+            $0.minDistance = 30
+            $0.minTimeInterval = 1
             $0.activityType = .automotiveNavigation
             //$0.timeout = .delayed(5) // 5 seconds of timeout after auth granted
         }.then { result in // you can attach one or more subscriptions via `then`.
             switch result {
             case .success(let newData):
                 self.lastLocation = newData.coordinate
+                print("😅😅getDetailsOfLocation getDetailsOfLocation 😅😅")
                 //coordinate(newData.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
             case .failure(let error):
                 print("An error has occurred: \(error.localizedDescription)")
@@ -95,7 +95,7 @@ class SwiftLocationManager {
         }
     }
     
-    class func getAddressWithGoogle(coordinate: CLLocationCoordinate2D, address: @escaping(String)->Void){
+    class func getAddressWithGoogle(coordinate: CLLocationCoordinate2D, address: @escaping(String)->Void) {
         
         if !Connectivity.isConnectedToInternet() {
             return
@@ -109,10 +109,14 @@ class SwiftLocationManager {
             if (error != nil) {
                 print("reverse geodcode fail: \(error!.localizedDescription)")
             }
-            let pm = placemarks! as [CLPlacemark]
+            guard let placemarks = placemarks else {
+                return
+            }
+            
+            let pm = placemarks as [CLPlacemark]
             
             if pm.count > 0 {
-                let pm = placemarks![0]
+                let pm = placemarks[0]
                 
                 if pm.subLocality != nil {
                     addressString = addressString + pm.subLocality! + ", "

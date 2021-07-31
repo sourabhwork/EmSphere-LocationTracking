@@ -70,7 +70,7 @@ class MarkAttandanceViewController: UIViewController {
 //            self.showLocationServiceAlert()
 //        }
         lastPunchLabel.text = ""
-        //locationManager.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
         self.setNavigationBar()
         
         let registrationDetails = UserProfile.getUserProfile()
@@ -103,8 +103,8 @@ class MarkAttandanceViewController: UIViewController {
         
         self.deletePunchHistory()
         //self.removePreviousControler()
-        //self.setupCamera()
-        //self.setCameraLayout()
+        self.setupCamera()
+        self.setCameraLayout()
         
         UserProfile.saveIsVisitToLocationVC(status: true)
         UserProfile.userIsLogin(value: true)

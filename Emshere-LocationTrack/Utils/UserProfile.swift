@@ -882,8 +882,10 @@ class UserProfile {
     
     static func userIsLogin(value: Bool) {
         let userDefault = UserDefaults.standard
-        userDefault.bool(forKey: "isUserLogin")
+        //userDefault.bool(forKey: "isUserLogin")
+        userDefault.set(value, forKey: "isUserLogin")
         userDefault.synchronize()
+        
     }
     
     static func getUserIsLogin()->Bool {

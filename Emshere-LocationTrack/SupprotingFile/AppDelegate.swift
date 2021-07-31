@@ -103,8 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         // Create code by sourabh 26-7-2021
         SwiftLocationManager.initilizeSwiftLocation()        
-//        self.bgTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
-//        RunLoop.main.add(bgTimer, forMode: .common)
+
         
         return true
     }
@@ -241,6 +240,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
         
     }
 

@@ -42,8 +42,10 @@ class Const {
         }
         
         static var licenseUrl: String {
-            
-            return "https://cloud.emsphere.com/Enterprise_MobileAppService/api/User/"
+            // new
+            //return "https://cloud.emsphere.com/Enterprise_MobileAppService/api/User/"
+            // Old
+            return "https://cloud.emsphere.com/Enterprise_MobileAppService/api/TrackerMobUser/"
         }
         
         static var OTPUrl: String {

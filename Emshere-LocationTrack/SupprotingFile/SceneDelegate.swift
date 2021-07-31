@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        print("🙏🙏  connectionOptions connectionOptions 🙏 🙏")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -30,16 +31,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        print("🙏🙏  sceneDidBecomeActive sceneDidBecomeActive 🙏 🙏")
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+        print("🙏🙏  sceneWillResignActive sceneWillResignActive 🙏 🙏")
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+       print("🙏🙏  sceneWillEnterForeground  sceneWillEnterForeground 🙏🙏")
+//        var employeeId = ""
+//        if let registrationDetails = UserProfile.getUserProfile() {
+//            employeeId = registrationDetails["EmployeeID"] ?? ""
+//        }
+//        BackgroundManager.sharedInstance.stopTimer()
+//        if SwiftLocationManager.getIsAuthorization() && !employeeId.isEmpty {
+//            print("Enter inside getIsAuthorization and ")
+//            BackgroundManager.sharedInstance.startTimer()
+//        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -52,12 +65,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let registrationDetails = UserProfile.getUserProfile() {
             employeeId = registrationDetails["EmployeeID"] ?? ""
         }
-        //&& UserProfile.getUserIsLogin()
-        if SwiftLocationManager.getIsAuthorization() && !employeeId.isEmpty {
+        //UserProfile.getUserIsLogin()
+        // !employeeId.isEmpty
+        if SwiftLocationManager.getIsAuthorization() && UserProfile.getUserIsLogin() {
             print("Enter inside getIsAuthorization and ")
-            BackgroundManager.sharedInstance.startTimer()
-            RunLoop.main.add(BackgroundManager.bgTimer, forMode: .common)
-            RunLoop.current.run()
+            //BackgroundManager.sharedInstance.startTimer()
+            DispatchQueue.global(qos: .background).async {
+                BackgroundManager.sharedInstance.startTimer()
+            }
+            //RunLoop.main.add(BackgroundManager.bgTimer, forMode: .tracking)
+            //RunLoop.current.run()
         }
     }
 

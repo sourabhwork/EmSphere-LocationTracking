@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
     //MARK:- viewController Delegate methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserProfile.userIsLogin(value: false)
         // Do any additional setup after loading the view.
         loginDetails = UserProfile.getRemeberMe()
         

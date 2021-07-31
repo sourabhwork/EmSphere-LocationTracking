@@ -207,10 +207,11 @@ class RegistrationViewController: UIViewController {
                 self.present(otpView, animated: true, completion: nil)
                 //self.navigationController?.pushViewController(otpView, animated: true)
             } else{
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let window = UIApplication.shared.windows.first
                 let loginViewController = UIStoryboard.Main().instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                appDelegate.window?.rootViewController = NavigationBarUtils.setupNavigationController(viewController: loginViewController)
-                appDelegate.window?.makeKeyAndVisible()
+                window?.rootViewController = NavigationBarUtils.setupNavigationController(viewController: loginViewController)
+                window?.makeKeyAndVisible()
             }
     }
 
