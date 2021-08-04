@@ -77,10 +77,10 @@ class MarkAttandanceViewController: UIViewController {
         employeeId = registrationDetails!["EmployeeID"]!
         print("employee id =",employeeId)
         
-        if (UIDevice.current.userInterfaceIdiom == .pad){
-            self.footerViewHeightConstaint.constant = 60
-            self.view.layoutIfNeeded()
-        }
+//        if (UIDevice.current.userInterfaceIdiom == .pad){
+//            self.footerViewHeightConstaint.constant = 60
+//            self.view.layoutIfNeeded()
+//        }
         
         tableView.isHidden = true
         self.lastPunchLabel.isHidden = true
@@ -103,6 +103,7 @@ class MarkAttandanceViewController: UIViewController {
         
         self.deletePunchHistory()
         //self.removePreviousControler()
+        // Temporary comment
         self.setupCamera()
         self.setCameraLayout()
         
@@ -116,6 +117,7 @@ class MarkAttandanceViewController: UIViewController {
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
     }
+    
     
     override func viewDidLayoutSubviews() {
         
@@ -220,12 +222,13 @@ class MarkAttandanceViewController: UIViewController {
     @objc func showCurrentLocationOnMapview() {
         
         //set current address to marker pin
-        self.view.showLoading()
+        
+       // self.view.showLoading()
         self.getAddress() {
             (returnAddress) in
             print("new Address = \(returnAddress)")
             self.currentAddress = returnAddress
-            self.view.dissmissLoading()
+         //   self.view.dissmissLoading()
         }
     }
     
@@ -428,6 +431,7 @@ class MarkAttandanceViewController: UIViewController {
     
     @objc func syncData() {
         ///*
+        print("SyncData SyncData  SyncData SyncData SyncData    SyncData")
         self.view.showLoading()
         APIManager.getSyncMobileApplicationConfiguration { (result) in
             print("result=",result)
@@ -685,7 +689,6 @@ class MarkAttandanceViewController: UIViewController {
     // Api call
     // for uplaod image with mark attedace details
     func markAttandaceApiCall(remark: String,parameter:[String:String]) {
-        
         var parameters = parameter
         
         // let url = UserProfile.getServiceURL()! + "/EmployeeApi/AddMobileSwipes"
@@ -743,7 +746,7 @@ class MarkAttandanceViewController: UIViewController {
     }
     
     func markAttandaceOfflineDataSyncApiCall(markAttedanceInfo:MarkAttendanceInfo,syncObjectNum:Int) {
-        
+        print("markAttandaceOfflineDataSyncApiCall  markAttandaceOfflineDataSyncApiCall markAttandaceOfflineDataSyncApiCall markAttandaceOfflineDataSyncApiCall")
         // let url = "http://seedmanagement.cloudapp.net/Enterprise_MobileApp/app/Api/EmployeeApi/AddMobileSwipes"
         let url = UserProfile.getServiceURL()! + Const.appUrl.employeeApi + "AddMobileSwipes"
         let parameters = self.getParameterDictionaryFromInfoObject(attedanceInfo: markAttedanceInfo)
